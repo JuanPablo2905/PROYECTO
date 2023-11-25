@@ -151,19 +151,34 @@ int main() {
 
     // comienza el codigo del motor 1
 
-    if (ldr_value2 < umbral_luminosidad2 && sensabajo2 == 1) {
+    if (ldr_value1 < umbral_luminosidad1 && sensabajo1 == 1) {
 
       girar_antihorario(); // baja cortina1
+    }
+    if (ldr_value1 < umbral_luminosidad1 && sensabajo1 == 0){
 
+      detener_motor1(); // se detiene el motor 1
+    }
+if(ldr_value1 > umbral_luminosidad1 && sensarriba1 == 0){
+
+      girar_horario(); // sube la cortina 1
     }
 
+// comienza el codigo del motor 2
+
+    if (ldr_value2 < umbral_luminosidad2 && sensabajo2 == 1) {
+
+      girar_antihorario(); // baja cortina2
+    }
     if (ldr_value2 < umbral_luminosidad2 && sensabajo2 == 0){
-      detener_motor2();
+
+      detener_motor2(); // se detiene el motor 2
     }
+if(ldr_value2 > umbral_luminosidad2 && sensarriba2 == 0){
 
-    if(ldr_value2 > umbral_luminosidad2 && sensarriba2 == 0){
+      girar_horario(); // sube la cortina 2
+    }
 
-      girar_horario(); // sube la cortina 1
+
 }
-
 }
